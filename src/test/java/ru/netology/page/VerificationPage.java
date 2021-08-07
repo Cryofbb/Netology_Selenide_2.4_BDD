@@ -6,15 +6,15 @@ import ru.netology.data.DataHelper;
 
 import static com.codeborne.selenide.Selenide.page;
 
-public class VerifycationPage {
+public class VerificationPage {
     @FindBy(css = "[data-test-id=code] input")
     private SelenideElement verifyField;
     @FindBy(css = "[data-test-id=action-verify]")
     private SelenideElement verifyButton;
 
-    public TransferPage validationTrue(DataHelper.VerificationCode code) {
+    public CardsPage validationTrue(DataHelper.VerificationCode code) {
         verifyField.setValue(code.getCode());
         verifyButton.click();
-        return page(TransferPage.class);
+        return page(CardsPage.class);
     }
 }
