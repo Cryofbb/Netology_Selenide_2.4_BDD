@@ -21,10 +21,10 @@ public class TransferPage {
     public CardsPage transfer(String sum, DataHelper.CardsInfo cardsInfo, int number) {
         amount.setValue(sum);
         if (number == 1) {
-            fromCard.setValue(cardsInfo.getFirst());
+            fromCard.setValue(cardsInfo.getSecond());
         }
         if (number == 2) {
-            fromCard.setValue(cardsInfo.getSecond());
+            fromCard.setValue(cardsInfo.getFirst());
         }
         transferButton.click();
         return page(CardsPage.class);
