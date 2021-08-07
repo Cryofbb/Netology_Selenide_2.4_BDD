@@ -34,23 +34,23 @@ class TransferTest {
         assertEquals(secondBalance - transferSum, cards.getSecondBalance());
     }
 
-    @Test
-    @DisplayName("From Second To First")
-    void shouldTransferMoneyToSecondFromFirst() {
-        var login = open("http://localhost:9999", LoginPage.class);
-        var auth = DataHelper.getAuthInfo();
-        var code = DataHelper.getVerificationCodeFor(auth);
-        var verify = login.validLogin(auth);
-        var cards = verify.validationTrue(code);
-        var cardsInfo = DataHelper.getCardsInfo();
-        int fistBalance = cards.getFistBalance();
-        int secondBalance = cards.getSecondBalance();
-        int difference = 500;
-        var transferToSecond = cards.transferToSecond();
-        transferToSecond.transfer(Integer.toString(difference), cardsInfo, 2);
-        assertEquals(fistBalance - difference, cards.getFistBalance());
-        assertEquals(secondBalance + difference, cards.getSecondBalance());
-    }
+//    @Test
+//    @DisplayName("From Second To First")
+//    void shouldTransferMoneyToSecondFromFirst() {
+//        var login = open("http://localhost:9999", LoginPage.class);
+//        var auth = DataHelper.getAuthInfo();
+//        var code = DataHelper.getVerificationCodeFor(auth);
+//        var verify = login.validLogin(auth);
+//        var cards = verify.validationTrue(code);
+//        var cardsInfo = DataHelper.getCardsInfo();
+//        int fistBalance = cards.getFistBalance();
+//        int secondBalance = cards.getSecondBalance();
+//        int difference = 500;
+//        var transferToSecond = cards.transferToSecond();
+//        transferToSecond.transfer(Integer.toString(difference), cardsInfo, 2);
+//        assertEquals(fistBalance - difference, cards.getFistBalance());
+//        assertEquals(secondBalance + difference, cards.getSecondBalance());
+//    }
 //    @Test
 //    void shouldNotTransferMoneyOverLimit() {
 //        var login = open("http://localhost:9999", LoginPage.class);
