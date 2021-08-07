@@ -6,6 +6,7 @@ import lombok.val;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.page;
 
 public class CardsPage {
     @FindBy(css = "li:nth-child(1) .button")
@@ -24,12 +25,12 @@ public class CardsPage {
 
     public TransferPage transferToFirst() {
         firstCard.click();
-        return new TransferPage();
+        return page(TransferPage.class);
     }
 
     public TransferPage transferToSecond() {
         secondCard.click();
-        return new TransferPage();
+        return page(TransferPage.class);
     }
 
     public int getFistBalance() {

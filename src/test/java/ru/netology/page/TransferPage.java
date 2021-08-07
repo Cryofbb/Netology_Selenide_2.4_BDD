@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import ru.netology.data.DataHelper;
 
+import static com.codeborne.selenide.Selenide.page;
+
 public class TransferPage {
     @FindBy(css = "[data-test-id=amount] input")
     private SelenideElement amount;
@@ -25,6 +27,6 @@ public class TransferPage {
             fromCard.setValue(cardsInfo.getSecond());
         }
         transferButton.click();
-        return new CardsPage();
+        return page(CardsPage.class);
     }
 }
